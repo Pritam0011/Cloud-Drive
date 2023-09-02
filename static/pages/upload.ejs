@@ -1,0 +1,89 @@
+<%- contentFor("style") %>
+<link rel="stylesheet" href="/styles/style.css" />
+<link rel="stylesheet" href="/styles/style_welcome.css" />
+<link rel="stylesheet" href="/styles/style_upload.css" />
+<style>
+	#card {
+		background-image: linear-gradient(
+			to bottom,
+			#360458,
+			#380356,
+			#390254,
+			#3b0253,
+			#3c0151,
+			#3a0151,
+			#390252,
+			#370252,
+			#320454,
+			#2b0656,
+			#240858,
+			#1b0a5a
+		);
+	}
+	#backBtn input {
+		position: absolute;
+		background-color: grey;
+		border-radius: 15px;
+		padding: 5px 10px;
+		outline: none;
+		cursor: pointer;
+		bottom: 20px;
+		left: 20px;
+		border: none;
+	}
+</style>
+
+<%- contentFor("cardbody") %>
+<div id="cardmain">
+	<h1>Welcome <%= uname %></h1>
+	<div id="con">
+		<section class="upload">
+			<div class="drop-area">
+				<div class="icon">
+					<img
+						src="/images/upload.png"
+						alt="fileUpload"
+						class="center"
+						draggable="false"
+					/>
+					<img
+						src="/images/upload.png"
+						alt="fileUpload"
+						class="left"
+						draggable="false"
+					/>
+					<img
+						src="/images/upload.png"
+						alt="fileUpload"
+						class="right"
+						draggable="false"
+					/>
+				</div>
+				<input type="file" id="fileIpt" />
+				<div class="icon-title">
+					<b>Drag your file here</b> <br />
+					<div id="orspan">
+						Or, <span class="browseBtn">choose your file</span>
+					</div>
+				</div>
+			</div>
+			<div class="prog-con">
+				<div class="bg-prog"></div>
+				<div class="in-con">
+					<div class="uptitle">Uploading File...</div>
+					<div class="per-con"><span id="per">0</span>%</div>
+					<div class="prog-bar"></div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<form action="/signout" method="post" id="logoutBtn">
+		<input type="submit" value="Log Out" />
+	</form>
+	<form action="/welcome" method="get" id="backBtn">
+		<input type="submit" value="Go Back" />
+	</form>
+</div>
+
+<%- contentFor("script") %>
+<script src="/js/upload.js"></script>

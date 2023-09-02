@@ -1,0 +1,162 @@
+/* @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Kanit:wght@300&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	color: whitesmoke;
+}
+#cardmain {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#cardmain h1 {
+	font-family: "Black Ops One", cursive;
+	letter-spacing: 1.5px;
+}
+#cardmain h4 {
+	font-family: "Tangerine", cursive;
+	font-size: 120%;
+	letter-spacing: 1px;
+	margin-top: 10px;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+
+input {
+	margin-bottom: 9px;
+	margin-top: 2px;
+	padding: 3px;
+	outline: none;
+	border: 1px solid greenyellow;
+	background-color: #6e6e6e;
+	color: whitesmoke;
+	border-radius: 7px;
+}
+.submit {
+	position: relative;
+	margin-top: 8px;
+	background-color: royalblue;
+	border: none;
+	border-radius: 115px;
+	width: 50%;
+	left: 25%;
+	padding: 5px 0;
+}
+
+#logoutBtn input {
+	position: absolute;
+	background-color: red;
+	border-radius: 15px;
+	padding: 5px 10px;
+	outline: none;
+	cursor: pointer;
+	bottom: 20px;
+	right: 20px;
+	border: none;
+}
+#subBtn {
+	cursor: pointer;
+}
+
+/* button glow  */
+#btndiv {
+	margin-top: 10vh;
+	width: 50%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.bbtn {
+	margin: 8px;
+}
+
+.gl_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.gl_container a {
+	font-family: "Poppins", sans-serif;
+	position: relative;
+	padding: 15px 30px;
+	text-decoration: none;
+	border: 1.5px solid black;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: red;
+	-webkit-box-reflect: below 0px
+		linear-gradient(transparent, rgba(0, 0, 0, 0.097));
+	transition: 0.5s;
+	transition-delay: 0s;
+}
+.gl_container a:hover {
+	color: #000;
+	transition-delay: 1.5s;
+	box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 40px yellow, 0 0 80px yellow,
+		0 0 160px yellow;
+}
+.gl_container a span {
+	position: relative;
+	z-index: 100;
+}
+
+.gl_container a::before {
+	content: "";
+	position: absolute;
+	left: -20%;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 2px;
+	background: yellow;
+	box-shadow: 5px -8px 0 yellow, 5px 8px 0 yellow;
+	transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+	transition-delay: 1s, 0.5s, 0s, 0s;
+}
+.gl_container a:hover::before {
+	width: 60%;
+	height: 100%;
+	left: -2px;
+	box-shadow: 5px 0 0 yellow, 5px 0 0 yellow;
+	transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+.gl_container a::after {
+	content: "";
+	position: absolute;
+	right: -20%;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 2px;
+	background: yellow;
+	box-shadow: -5px -8px 0 yellow, -5px 8px 0 yellow;
+	transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+	transition-delay: 1s, 0.5s, 0s, 0s;
+}
+.gl_container a:hover::after {
+	width: 60%;
+	height: 100%;
+	right: -2px;
+	box-shadow: -5px 0 0 yellow, -5px 0 0 yellow;
+	transition-delay: 0s, 0.5s, 1s, 1s;
+}

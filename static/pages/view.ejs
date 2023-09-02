@@ -1,0 +1,81 @@
+<%- contentFor("style") %>
+<link rel="stylesheet" href="/styles/style_view.css" />
+
+<%- contentFor("cardbody") %>
+<form action="/signout" method="post" id="logoutBtn">
+	<input type="submit" value="Log Out" />
+</form>
+<form action="/welcome" method="get" id="backBtn">
+	<input type="submit" value="Go Back" />
+</form>
+
+<div id="cardtmain">
+	<div class="table-wrapper table-responsive-vertical shadow-z-1">
+		<!-- Table starts here -->
+		<table id="table" class="table table-hover table-mc-light-blue">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Name</th>
+					<th>Size</th>
+					<th>View Option</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% if(data!==null) { data.forEach((element,idx) => { %>
+				<tr>
+					<td data-title="No."><%= idx+1 %></td>
+					<td data-title="Name"><%= element.name %></td>
+					<td data-title="Size"><%= element.size %></td>
+					<td data-title="View Option">
+						<a class="viewSpan" href="/welcome/view/details/<%= element._id %>"
+							>View</a
+						>
+						<a class="viewSpan2" href="/welcome/view/delete/<%= element._id %>"
+							>Delete</a
+						>
+					</td>
+				</tr>
+
+				<% }); } %>
+			</tbody>
+		</table>
+		<% if(data===null) {%>
+		<div id="noDataDiv">
+			<p
+				style="
+					color: red;
+					font-weight: bold;
+					font-size: large;
+					letter-spacing: 1px;
+				"
+			>
+				Data Not Found!
+			</p>
+			<p style="color: yellow">Please, Go Back and upload data.</p>
+		</div>
+		<% } %>
+	</div>
+</div>
+
+<%- contentFor("script") %>
+<script>
+	const ale = document.querySelector(".ale");
+	const showAle = (msg) => {
+		let aleTimer;
+		ale.innerHTML = `<b>${msg}</b>`;
+		ale.style.transform = "translate(-50%,0)";
+		clearTimeout(aleTimer);
+		aleTimer = setTimeout(() => {
+			ale.style.transform = "translate(-50%,-100px)";
+		}, 4000);
+	};
+
+	const currentUrl = window.location.href;
+	const paramString = currentUrl.split("?")[1];
+	const urlParams = new URLSearchParams(paramString);
+	const message = urlParams.get("message");
+	if (message !== null) {
+		showAle(message);
+	}
+</script>

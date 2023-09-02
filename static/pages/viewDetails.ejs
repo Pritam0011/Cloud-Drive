@@ -1,0 +1,48 @@
+<%- contentFor('style') %>
+<link rel="stylesheet" href="/styles/style.css" />
+<link rel="stylesheet" href="/styles/viewDetails.css" />
+<%- contentFor('cardbody') %>
+<div id="container">
+	<% if(data.type.includes("image/")) {%>
+	<div id="imgDiv"><img src="<%= data.url %>" alt="image" /></div>
+	<% }else {%>
+	<div id="imgDiv"><img src="/images/file.png" alt="image" /></div>
+	<% } %>
+
+	<div id="fileData">
+		<div id="fileItem">
+			<label for="name">Name:</label>
+			<span id="name"><%= data.name %></span><br />
+		</div>
+		<div id="fileItem">
+			<label for="type">Type:</label>
+			<span id="type"><%= data.type %></span><br />
+		</div>
+		<div id="fileItem">
+			<label for="size">Size:</label>
+			<span id="size"><%= data.size %></span><br />
+		</div>
+		<div id="fileItem">
+			<label for="created">Created:</label>
+			<span id="created"
+				><%= data.created.split("T")[0]%> <%=
+				(data.created.split("T")[1]).split(".")[0] %></span
+			><br />
+		</div>
+		<div id="fileDItem">
+			<div id="fileDownItem">
+				<a href="<%= data.url %>" target="_blank">Open</a>
+			</div>
+			<div id="fileDelItem">
+				<a href="/welcome/view/delete/<%= _id %>">Delete</a>
+			</div>
+		</div>
+	</div>
+	<form action="/signout" method="post" id="logoutBtn">
+		<input type="submit" value="Log Out" />
+	</form>
+	<form action="/welcome/view" method="get" id="backBtn">
+		<input type="submit" value="Go Back" />
+	</form>
+</div>
+<%- contentFor('script') %>

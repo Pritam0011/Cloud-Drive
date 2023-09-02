@@ -1,0 +1,141 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	color: whitesmoke;
+}
+#card {
+	background-image: linear-gradient(
+		to right top,
+		#360458,
+		#380356,
+		#390254,
+		#3b0253,
+		#3c0151,
+		#3a0151,
+		#390252,
+		#370252,
+		#320454,
+		#2b0656,
+		#240858,
+		#1b0a5a
+	);
+}
+#container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	/* flex-direction: row; */
+}
+
+#imgDiv {
+	/* position: absolute; */
+	/* top: 20px; */
+	width: 50%;
+	/* height: 30%; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#imgDiv img {
+	width: 50%;
+	max-height: 100%;
+	max-width: max-content;
+}
+#fileData {
+	width: 50%;
+}
+#fileData label {
+	color: gray;
+}
+#fileData span {
+	margin-left: 6px;
+}
+#fileItem {
+	margin-bottom: 10px;
+}
+#fileDownItem {
+	margin-top: 6%;
+}
+
+#fileData a {
+	margin-top: 6%;
+	text-decoration: none;
+	padding: 5px 13px;
+	background-color: rgb(5, 162, 5);
+	color: white;
+	border-radius: 20px;
+}
+#fileData a:active {
+	background-color: rgb(13, 116, 13);
+}
+#fileDelItem {
+	margin-left: 15px;
+	margin-top: 6%;
+}
+#fileDelItem a {
+	margin-top: 6%;
+	text-decoration: none;
+	padding: 5px 13px;
+	background-color: rgb(216, 26, 19);
+	color: white;
+	border-radius: 20px;
+}
+#fileDelItem a:active {
+	background-color: rgb(152, 15, 10);
+}
+#fileDItem {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#backBtn input {
+	position: absolute;
+	background-color: grey;
+	border-radius: 15px;
+	padding: 5px 10px;
+	outline: none;
+	cursor: pointer;
+	bottom: 20px;
+	left: 20px;
+	border: none;
+}
+#logoutBtn input {
+	position: absolute;
+	background-color: red;
+	border-radius: 15px;
+	padding: 5px 10px;
+	outline: none;
+	cursor: pointer;
+	bottom: 20px;
+	right: 20px;
+	border: none;
+}
+
+@media screen and (max-width: 650px) {
+	#container {
+		flex-direction: column;
+	}
+	#imgDiv {
+		width: 100%;
+	}
+	#imgDiv img {
+		width: 60%;
+	}
+	#fileData {
+		margin-top: 20px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

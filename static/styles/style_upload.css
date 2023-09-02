@@ -1,0 +1,110 @@
+:root {
+	--main-border: #e6db3d;
+	--light-blue: #03a9f4;
+	--dark-blue: #028bca;
+}
+#con {
+	width: 100%;
+}
+.drop-area,
+.upload {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.drop-area {
+	width: 70%;
+	background-color: rgba(255, 255, 255, 0.068);
+	min-height: 12.5rem;
+	border: 0.125rem dashed var(--main-border);
+	margin: 2.57vh 1.5625rem;
+	border-radius: 0.9375rem;
+	transition: all 0.25s ease-in-out;
+}
+.dragged.drop-area {
+	background-color: #e4e4dec9;
+	border-color: #f5c56d;
+}
+
+.icon {
+	width: 5.625rem;
+	height: 6.25rem;
+}
+.icon img {
+	width: 5.625rem;
+	position: absolute;
+	transform-origin: bottom;
+	transition: transform 0.25s ease-in-out;
+}
+.icon .center {
+	z-index: 2;
+}
+.icon .right,
+.icon .left {
+	filter: grayscale(0.45);
+}
+.dragged .icon .right {
+	transform: rotate(10deg) translateX(1.875rem) translateY(3px) scale(0.88);
+}
+.dragged .icon .left {
+	transform: rotate(-10deg) translateX(-1.875rem) translateY(3px) scale(0.88);
+}
+.dragged .icon .center {
+	transform: translateY(-2px);
+}
+.icon-title {
+	color: gray;
+}
+#fileIpt {
+	display: none;
+}
+.browseBtn {
+	color: #0b9df8f2;
+	cursor: pointer;
+}
+#orspan {
+	font-size: small;
+	margin-top: 6px;
+	margin-left: 15px;
+}
+.prog-con {
+	position: relative;
+	width: 70%;
+	height: 4.375rem;
+	border: 2px solid --dark-blue;
+	border-radius: 0.625rem;
+	display: none;
+}
+.bg-prog {
+	position: absolute;
+	background: var(--main-bg);
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	transform-origin: left;
+	transition: all 0.3s linear;
+}
+.in-con {
+	position: absolute;
+	z-index: 2;
+	margin: 0.625rem 0.9375rem;
+	width: calc(100% - 1.875rem);
+}
+.per-con {
+	font-size: 13px;
+	margin: 5px;
+}
+.prog-bar {
+	background: var(--light-blue);
+	width: 100%;
+	height: 3px;
+	border-radius: 0.3125rem;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s linear;
+	box-shadow: 0 0 1px var(--light-blue), 0 0 1px var(--light-blue),
+		0 0 1px var(--light-blue), 0 0 1px var(--light-blue),
+		0 0 5px var(--light-blue);
+}

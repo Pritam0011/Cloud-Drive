@@ -1,0 +1,92 @@
+<%- contentFor('style') %>
+<link rel="stylesheet" href="../styles/style.css" />
+<link
+	rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
+<style>
+	#card {
+		background-image: linear-gradient(
+			to bottom,
+			#360458,
+			#380356,
+			#390254,
+			#3b0253,
+			#3c0151,
+			#3a0151,
+			#390252,
+			#370252,
+			#320454,
+			#2b0656,
+			#240858,
+			#1b0a5a
+		);
+	}
+	.material-symbols-outlined {
+		rotate: 180deg;
+		cursor: pointer;
+	}
+</style>
+
+<%- contentFor('cardbody') %>
+<p id="signTitle">AUTHENTICATION</p>
+<div id="signOp">
+	<div id="signup" class="signBtn">Sign Up</div>
+	<div id="signin" class="signBtn">Sign In</div>
+</div>
+<form
+	id="formField1"
+	class="formF"
+	name="signUp"
+	action="/signup"
+	method="post"
+>
+	<label for="name">Full Name:</label>
+	<input id="nameInp" type="text" name="name" required autocomplete="off" />
+	<label for="email">Email:</label>
+	<input type="email" name="email" required />
+	<label for="password">Password:</label>
+	<input
+		id="passwordField"
+		type="password"
+		name="password"
+		required
+		minlength="6"
+	/>
+	<span id="showHideBtn" class="material-symbols-outlined"> Visibility</span>
+	<input id="subBtn" type="submit" value="Submit" />
+</form>
+<form
+	id="formField2"
+	class="formF"
+	name="signIn"
+	action="/signin"
+	method="post"
+>
+	<label for="email">Email:</label>
+	<input type="email" name="email" required />
+	<label for="password">Password:</label>
+	<input id="passwordField2" type="password" name="password" required />
+	<span id="showHideBtn2" class="material-symbols-outlined"> visibility </span>
+	<input id="subBtn" type="submit" value="Submit" />
+</form>
+<%- contentFor('script') %>
+
+<script src="/js/authpage.js"></script>
+<script>
+	const ale = document.querySelector(".ale");
+	const showAle = (msg) => {
+		let aleTimer;
+		ale.innerHTML = `<b>${msg}</b>`;
+		ale.style.transform = "translate(-50%,0)";
+		clearTimeout(aleTimer);
+		aleTimer = setTimeout(() => {
+			ale.style.transform = "translate(-50%,-100px)";
+		}, 4000);
+	};
+	let msg = "<%= typeof message !== 'undefined' ? message : ''%>";
+
+	if (msg !== "") {
+		showAle(msg);
+	}
+</script>

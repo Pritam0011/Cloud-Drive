@@ -1,0 +1,44 @@
+<%- contentFor('style') %>
+<link rel="stylesheet" href="/styles/style.css" />
+<link rel="stylesheet" href="/styles/style_welcome.css" />
+<style>
+	#card {
+		background-image: linear-gradient(
+			to right top,
+			#360458,
+			#380356,
+			#390254,
+			#3b0253,
+			#3c0151,
+			#3a0151,
+			#390252,
+			#370252,
+			#320454,
+			#2b0656,
+			#240858,
+			#1b0a5a
+		);
+	}
+</style>
+<%- contentFor('cardbody') %>
+<div id="cardmain">
+	<h1>Welcome <%= ename %></h1>
+	<h4>Welcome to Cloud Drive!🎊 We're delighted to have you here.</h4>
+	<div id="btndiv">
+		<div class="bbtn">
+			<div class="gl_container">
+				<a href="/welcome/upload"><span>New Upload</span></a>
+			</div>
+		</div>
+		<div class="bbtn">
+			<div class="gl_container">
+				<a href="/welcome/view"><span>View Uploads</span></a>
+			</div>
+		</div>
+	</div>
+
+	<form action="/signout" method="post" id="logoutBtn">
+		<input type="submit" value="Log Out" />
+	</form>
+</div>
+<%- contentFor('script') %>
