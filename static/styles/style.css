@@ -25,27 +25,7 @@ body {
 	);
 	color: whitesmoke;
 }
-#main {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
-#card {
-	background-color: #333;
-	position: relative;
-	width: 65%;
-	height: calc(100% - 25%);
-	border-radius: 18px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-
-	box-shadow: 12px 28px 27px 6px rgba(0, 0, 0, 0.1);
-}
 #signTitle {
 	font-size: 4vw;
 	font-weight: bold;
@@ -94,13 +74,14 @@ body {
 }
 .formF input {
 	background-color: #6e6e6e;
-	margin: 3px 0;
-	height: 5.4vh;
+	margin: 5px 0;
+	height: 5vh;
 	padding: 4px;
 	outline: none;
 	border-radius: 5px;
 	font-weight: bold;
 	color: rgb(48, 48, 49);
+	margin-bottom: 15px;
 }
 .formF input:focus {
 	border: 1.5px solid royalblue;
@@ -149,7 +130,7 @@ body {
 	color: white;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	.signBtn {
 		margin: 5px;
 		padding: 5px;
@@ -164,11 +145,9 @@ body {
 		padding-right: calc(100% - 88%);
 	}
 	.formF input {
-		height: 3vh;
+		height: 4vh;
 	}
-
-	/* next */
 	#cardImg {
-		width: 50vw;
+		width: 70vw;
 	}
 }

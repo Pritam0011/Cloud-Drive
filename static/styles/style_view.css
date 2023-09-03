@@ -14,13 +14,22 @@
 html {
 	position: relative;
 	overflow-x: hidden;
-	/* overflow-y: hidden; */
+	overflow-y: hidden;
 	padding: 0;
+	margin: 0;
 	min-height: 100%;
+	width: 100%;
+	height: 100%;
 	font-size: 62.5%;
 }
 body {
-	margin: 30px;
+	width: 100%;
+	height: 100%;
+	/* margin: 30px; */
+	overflow-x: hidden;
+
+	overflow-y: hidden;
+
 	font-family: "RobotoDraft", "Roboto", "Helvetica Neue, Helvetica, Arial",
 		sans-serif;
 	font-style: normal;
@@ -49,17 +58,21 @@ body {
 	);
 	color: whitesmoke;
 }
-
-.shadow-z-1 {
+#card {
+	width: 65%;
+	height: calc(100% - 10%);
+}
+/* .shadow-z-1 {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12),
 		0 1px 2px 0 rgba(0, 0, 0, 0.24);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12),
 		0 1px 2px 0 rgba(0, 0, 0, 0.24);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-}
+} */
 /* -- Material Design Table style -------------- */
 
 .table {
+	border: 1px solid rgba(0, 0, 128, 0.562);
 	width: 100%;
 	max-width: 100%;
 	margin-bottom: 2rem;
@@ -82,6 +95,7 @@ body {
 .table-wrapper {
 	overflow-y: scroll;
 	height: fit-content;
+	height: 100%;
 	max-height: 85vh;
 }
 
@@ -99,7 +113,7 @@ body {
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
 	text-align: left;
-	padding: 1.6rem;
+	padding: 1.3rem;
 	vertical-align: top;
 	border-top: 0;
 	-webkit-transition: all 0.3s ease;
@@ -922,7 +936,20 @@ body {
 	left: 20px;
 	border: none;
 }
+@media screen and (max-width: 730px) {
+	#logoutBtn input {
+		rotate: 90deg;
+		bottom: 20px;
+		right: -35px;
+	}
+	#backBtn input {
+		rotate: 270deg;
+		bottom: 20px;
+		left: -35px;
+	}
+}
 .viewSpan {
+	margin-left: 10px;
 	cursor: pointer;
 	color: #fff;
 	background-color: green;
@@ -939,7 +966,7 @@ body {
 	background-color: rgb(217, 10, 10);
 	padding: 5px 12px;
 	border-radius: 15px;
-	margin-left: 10px;
+	margin-left: 5px;
 	text-decoration: none;
 }
 .viewSpan2:active {

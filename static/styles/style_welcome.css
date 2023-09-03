@@ -22,15 +22,31 @@ body {
 	justify-content: center;
 	flex-direction: column;
 }
-#cardmain h1 {
-	font-family: "Black Ops One", cursive;
+#cardmain .h1 {
+	width: 100%;
+	font-size: 2em;
+	font-weight: bold;
 	letter-spacing: 1.5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+#cardmain .h1 span {
+	font-family: "Black Ops One", cursive;
 }
 #cardmain h4 {
-	font-family: "Tangerine", cursive;
 	font-size: 120%;
-	letter-spacing: 1px;
-	margin-top: 10px;
+	letter-spacing: 1.23px;
+	margin-top: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+#cardmain h4 span {
+	font-family: "Tangerine", cursive;
 }
 form {
 	display: flex;
