@@ -28,7 +28,7 @@ const storage = getStorage(getApp("storage"));
 
 const upload = multer({
 	storage: multer.memoryStorage(),
-	limits: { fileSize: 52428800 },
+	// limits: { fileSize: 52428800 },
 }).single("efile");
 
 const up = async (req: Request, res: Response) => {
