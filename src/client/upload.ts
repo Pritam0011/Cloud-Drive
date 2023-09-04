@@ -67,8 +67,7 @@ if (drop && fileIpt && browseBtn && proBar && perS && ale) {
 		formData.append("efile", file);
 
 		const xhr = new XMLHttpRequest();
-		xhr.open("POST", "/send");
-		xhr.send(formData);
+
 		xhr.timeout = 2 * 60 * 1000;
 		xhr.onreadystatechange = () => {
 			if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -78,6 +77,13 @@ if (drop && fileIpt && browseBtn && proBar && perS && ale) {
 					proBar.style.transform = `scaleX(0)`;
 				}
 				showAle(JSON.parse(xhr.response).message);
+			} else {
+				xhr.upload.onloadend = () => {
+					if (ale) {
+						ale.innerHTML = `<b>${"Loading..."}</b>`;
+						ale.style.transform = "translate(-50%,0)";
+					}
+				};
 			}
 		};
 
@@ -90,5 +96,7 @@ if (drop && fileIpt && browseBtn && proBar && perS && ale) {
 			if (fileIpt) fileIpt.value = "";
 			showAle("Request encountered an error");
 		};
+		xhr.open("POST", "/send");
+		xhr.send(formData);
 	}
 }
